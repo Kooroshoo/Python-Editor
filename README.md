@@ -1,6 +1,6 @@
 # Python-Editor
 
-[Link](https://kooroshoo.github.io/Python-Editor/))
+[Link](https://kooroshoo.github.io/Python-Editor/)
 
 
 **limitations:**
