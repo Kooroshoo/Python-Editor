@@ -3,7 +3,7 @@ require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-e
 require(['vs/editor/editor.main'], async function () {
     // Initialize Monaco Editor
     const editor = monaco.editor.create(document.getElementById('editor'), {
-        value: `# Example Python Code\nfor i in range(1, 6):\n    print(i)`,  // Default example
+        value: `# Your code here`,
         language: 'python',
         theme: 'vs-dark',
         automaticLayout: true
@@ -14,7 +14,7 @@ require(['vs/editor/editor.main'], async function () {
     console.log('Pyodide loaded!');
 
     // Expose the appendToConsole function globally for Pyodide to access
-    globalThis.appendToConsole = function(message, isError = false) {
+    globalThis.appendToConsole = function (message, isError = false) {
         const consoleDiv = document.getElementById('console');
         const messageElement = document.createElement('div');
         messageElement.textContent = message;
@@ -38,6 +38,23 @@ require(['vs/editor/editor.main'], async function () {
         sys.stdout = ConsoleOutput()
         sys.stderr = ConsoleOutput()
     `);
+
+    // Difficulty Selection Logic
+    document.getElementById('load-question').addEventListener('click', () => {
+        const selectedDifficulty = document.getElementById('difficulty').value; // Get the selected difficulty
+        const filteredQuestions = questions.filter(q => q.difficulty === selectedDifficulty); // Filter questions by difficulty
+
+        if (filteredQuestions.length > 0) {
+            const question = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
+            editor.setValue(`# ${question.title}\n# ${question.description}\n# Example:\n${question.example}\n\n${question.boilerplate}`);
+            
+            // Hide the "Load Question" button and difficulty dropdown container after loading the question
+            document.getElementById('load-question').style.display = 'none';
+            document.getElementById('difficulty-container').style.display = 'none';
+        } else {
+            alert('No questions available for the selected difficulty.');
+        }
+    });
 
     // Run Code Button
     document.getElementById('run-code').addEventListener('click', async () => {
