@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Editor with Visuals and Console</title>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.0/full/pyodide.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.40.0/min/vs/loader.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #2d2d2d; /* Dark grey background */
+            color: white; /* White text */
+        }
+
+        header {
+            background: #1f1f1f; /* Dark grey background for the header */
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-bottom: 2px solid #444; /* Slightly lighter grey border */
+        }
+
+        #main-container {
+            display: flex;
+            flex: 1;
+        }
+
+        #editor-container, #output-container {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        #editor-container {
+            border-right: 2px solid #444; /* Darker grey border for editor */
+        }
+
+        #output-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #console {
+            flex: 1;
+            background: #222;
+            color: #0f0; /* Green text for console output */
+            padding: 10px;
+            font-family: monospace;
+            overflow-y: auto;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #444; /* Darker button background */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background: #555; /* Slightly lighter grey when hovering */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Python Editor
+    </header>
+    <div id="main-container">
+        <div id="editor-container">
+            <div id="editor" style="height: 100%;"></div>
+        </div>
+        <div id="output-container">
+            <button id="run-code">Run Code</button>
+            <div id="console"></div>
+        </div>
+    </div>
+    <script src="editor.js"></script>
+</body>
+</html>
