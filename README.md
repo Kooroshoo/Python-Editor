@@ -4,6 +4,13 @@
 
 [Link](https://kooroshoo.github.io/Python-Editor/)
 
+**Summary of Technologies in Use:**
+
+- Monaco Editor: Provides the frontend code editor interface.
+- Pyodide: Enables Python execution in the browser via WebAssembly.
+- JavaScript: Manages the editor's interactions and executes code in the browser.
+- HTML/CSS: Provides structure and styling for the app.
+
 
 **limitations:**
 
