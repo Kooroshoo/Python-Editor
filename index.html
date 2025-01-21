@@ -7,6 +7,7 @@
     <script src="https://cdn.jsdelivr.net/pyodide/v0.23.0/full/pyodide.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.40.0/min/vs/loader.min.js"></script>
     <style>
+        /* General body styling */
         body {
             margin: 0;
             display: flex;
@@ -17,6 +18,7 @@
             color: white; /* White text */
         }
 
+        /* Header styling */
         header {
             background: #1f1f1f; /* Dark grey background for the header */
             color: white;
@@ -25,27 +27,32 @@
             border-bottom: 2px solid #444; /* Slightly lighter grey border */
         }
 
+        /* Main container that holds the editor and output containers */
         #main-container {
             display: flex;
             flex: 1;
         }
 
+        /* Editor container styling */
         #editor-container, #output-container {
             flex: 1;
             padding: 10px;
             box-sizing: border-box;
         }
 
+        /* Styling for editor container */
         #editor-container {
             border-right: 2px solid #444; /* Darker grey border for editor */
         }
 
+        /* Output container styling */
         #output-container {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
 
+        /* Styling for console area */
         #console {
             flex: 1;
             background: #222;
@@ -56,6 +63,7 @@
             border-radius: 5px;
         }
 
+        /* Styling for buttons */
         button {
             padding: 10px 20px;
             background: #444; /* Darker button background */
@@ -66,6 +74,7 @@
             margin-bottom: 10px;
         }
 
+        /* Styling for header links */
         header a {
             font-size: 14px;
             color: #FFFFFF;
@@ -78,6 +87,65 @@
         header a:hover {
             color: #FFD700;
         }
+
+        /* Styling for controls container */
+        #controls-container {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Space between the elements */
+            margin-bottom: 10px;
+        }
+
+        /* Styling for category and difficulty dropdown containers */
+        #category-container, #difficulty-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Styling for dropdown labels */
+        #category-container label, #difficulty-container label {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        /* Styling for select dropdowns */
+        #category, #difficulty {
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #444; /* Dark border for select */
+            border-radius: 5px;
+            background-color: #333; /* Slightly lighter background for select */
+            color: white;
+            width: 150px; /* Set a fixed width */
+        }
+
+        /* Align the Load Question button with the dropdowns */
+        #load-question {
+            padding: 10px 20px;
+            margin-top: 30px;
+            background: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            height: 36px; /* Same height as the dropdowns */
+        }
+
+        /* Ensure the "Run Code" button takes up the full width */
+        #run-code {
+            margin-top: 10px; /* Spacing for the run button */
+            width: 100%;
+        }
+
+        /* Prevent dropdowns from overlapping */
+        #output-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: space-between;
+        }
+
     </style>
 </head>
 
@@ -91,21 +159,34 @@
             <div id="editor" style="height: 100%;"></div>
         </div>
         <div id="output-container">
-            <div id="difficulty-container" style="margin-bottom: 10px;">
-                <label for="difficulty" style="margin-right: 10px;">Select Difficulty:</label>
-                <select id="difficulty" style="padding: 5px;">
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
+            <div id="controls-container">
+                <div id="category-container">
+                    <label for="category">Select Category:</label>
+                    <select id="category">
+                        <option value="basics">Programming Basics</option>
+                        <option value="data-structures-and-algorithms">Data Structures and Algorithms</option>
+                        <option value="design-patterns">Design Patterns</option>
+                        <option value="system-design">System Design</option>
+                    </select>
+                </div>
+                <div id="difficulty-container">
+                    <label for="difficulty">Select Difficulty:</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <button id="load-question">Load Question</button>
             </div>
-            <button id="load-question">Load Question</button>
+
             <button id="run-code">Run Code</button>
             <div id="console"></div>
         </div>
     </div>
+
     <script src="editor.js"></script>
     <script src="questions.js"></script>
-
 </body>
+
 </html>

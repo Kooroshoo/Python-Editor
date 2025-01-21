@@ -39,20 +39,21 @@ require(['vs/editor/editor.main'], async function () {
         sys.stderr = ConsoleOutput()
     `);
 
-    // Difficulty Selection Logic
+    // Load Question Logic with Category and Difficulty
     document.getElementById('load-question').addEventListener('click', () => {
+        const selectedCategory = document.getElementById('category').value; // Get the selected category
         const selectedDifficulty = document.getElementById('difficulty').value; // Get the selected difficulty
-        const filteredQuestions = questions.filter(q => q.difficulty === selectedDifficulty); // Filter questions by difficulty
+
+        // Filter questions by category and difficulty
+        const filteredQuestions = questions.filter(q => 
+            q.category === selectedCategory && q.difficulty === selectedDifficulty
+        );
 
         if (filteredQuestions.length > 0) {
             const question = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
             editor.setValue(`# ${question.title}\n# ${question.description}\n# Example:\n${question.example}\n\n${question.boilerplate}`);
-            
-            // Hide the "Load Question" button and difficulty dropdown container after loading the question
-            document.getElementById('load-question').style.display = 'none';
-            document.getElementById('difficulty-container').style.display = 'none';
         } else {
-            alert('No questions available for the selected difficulty.');
+            alert('No questions available for the selected category and difficulty.');
         }
     });
 
