@@ -219,6 +219,208 @@ const questions = [
         boilerplate: `def largest_rectangle_area(heights: list[int]) -> int:\n    # Your code here\n    pass`
     },
 
+    // Arrays
+
+    {
+        "title": "Create an Array",
+        "difficulty": "easy",
+        "category": "arrays-and-operations",
+        "description": "Write a function `create_array(size: int, value: int) -> list[int]` to create an array of a given size and initialize it with a specific value.",
+        "example": "# Input: size = 5, value = 0\n# Output: [0, 0, 0, 0, 0]",
+        "boilerplate": "def create_array(size: int, value: int) -> list[int]:",
+        "hint": "Array initialization, list multiplication in Python."
+    },
+    {
+        "title": "Access Array Elements",
+        "difficulty": "easy",
+        "category": "arrays-and-operations",
+        "description": "Write a function `access_element(arr: list[int], index: int) -> int` to access the element at a given index in an array.",
+        "example": "# Input: arr = [1, 2, 3, 4], index = 2\n# Output: 3",
+        "boilerplate": "def access_element(arr: list[int], index: int) -> int:",
+        "hint": "Indexing, direct access via array indices."
+    },
+    {
+        "title": "Insert an Element at the End",
+        "difficulty": "easy",
+        "category": "arrays-and-operations",
+        "description": "Write a function `insert_at_end(arr: list[int], value: int) -> list[int]` to insert a value at the end of the array.",
+        "example": "# Input: arr = [1, 2, 3], value = 4\n# Output: [1, 2, 3, 4]",
+        "boilerplate": "def insert_at_end(arr: list[int], value: int) -> list[int]:",
+        "hint": "Array append operation (in-place modification), dynamic array resizing."
+    },
+    {
+        "title": "Insert an Element at a Specific Index",
+        "difficulty": "easy",
+        "category": "arrays-and-operations",
+        "description": "Write a function `insert_at_index(arr: list[int], index: int, value: int) -> list[int]` to insert a value at a specific index in the array.",
+        "example": "# Input: arr = [1, 2, 4], index = 2, value = 3\n# Output: [1, 2, 3, 4]",
+        "boilerplate": "def insert_at_index(arr: list[int], index: int, value: int) -> list[int]:",
+        "hint": "Use list `insert()` method, array shift operations."
+    },
+    {
+        "title": "Delete an Element from an Array",
+        "difficulty": "easy",
+        "category": "arrays-and-operations",
+        "description": "Write a function `delete_element(arr: list[int], index: int) -> list[int]` to delete an element at a specific index from the array.",
+        "example": "# Input: arr = [1, 2, 3, 4], index = 2\n# Output: [1, 2, 4]",
+        "boilerplate": "def delete_element(arr: list[int], index: int) -> list[int]:",
+        "hint": "List deletion using `del`, array resizing."
+    },
+    {
+        "title": "Find the Maximum Element in an Array",
+        "difficulty": "easy",
+        "category": "arrays-and-operations",
+        "description": "Write a function `find_max(arr: list[int]) -> int` to find the maximum element in an array.",
+        "example": "# Input: arr = [1, 2, 3, 4]\n# Output: 4",
+        "boilerplate": "def find_max(arr: list[int]) -> int:",
+        "hint": "Use Python's built-in `max()` function."
+    },
+    {
+        "title": "Find the Minimum Element in an Array",
+        "difficulty": "easy",
+        "category": "arrays-and-operations",
+        "description": "Write a function `find_min(arr: list[int]) -> int` to find the minimum element in an array.",
+        "example": "# Input: arr = [1, 2, 3, 4]\n# Output: 1",
+        "boilerplate": "def find_min(arr: list[int]) -> int:",
+        "hint": "Use Python's built-in `min()` function."
+    },
+    {
+        "title": "Find the Index of an Element",
+        "difficulty": "easy",
+        "category": "arrays-and-operations",
+        "description": "Write a function `find_index(arr: list[int], value: int) -> int` to find the index of a given element in an array.",
+        "example": "# Input: arr = [1, 2, 3, 4], value = 3\n# Output: 2",
+        "boilerplate": "def find_index(arr: list[int], value: int) -> int:",
+        "hint": "Use list `.index()` method to find the index."
+    },
+    {
+        "title": "Reverse an Array",
+        "difficulty": "easy",
+        "category": "arrays-and-operations",
+        "description": "Write a function `reverse_array(arr: list[int]) -> list[int]` to reverse the elements of the array.",
+        "example": "# Input: arr = [1, 2, 3, 4]\n# Output: [4, 3, 2, 1]",
+        "boilerplate": "def reverse_array(arr: list[int]) -> list[int]:",
+        "hint": "Use Python slicing to reverse an array."
+    },
+    {
+        "title": "Rotate an Array (Left Shift)",
+        "difficulty": "easy",
+        "category": "arrays-and-operations",
+        "description": "Write a function `rotate_array(arr: list[int], k: int) -> list[int]` to rotate an array to the left by `k` positions.",
+        "example": "# Input: arr = [1, 2, 3, 4, 5], k = 2\n# Output: [3, 4, 5, 1, 2]",
+        "boilerplate": "def rotate_array(arr: list[int], k: int) -> list[int]:",
+        "hint": "Array slicing to rotate elements."
+    },
+    {
+        "title": "Find the Kth Largest Element in an Array",
+        "difficulty": "medium",
+        "category": "arrays-and-operations",
+        "description": "Write a function `find_kth_largest(arr: list[int], k: int) -> int` to find the k-th largest element in an unsorted array.",
+        "example": "# Input: arr = [3, 1, 4, 1, 5], k = 2\n# Output: 4",
+        "boilerplate": "def find_kth_largest(arr: list[int], k: int) -> int:",
+        "hint": "Sorting the array in descending order and accessing the k-th element."
+    },
+    {
+        "title": "Merge Sorted Arrays",
+        "difficulty": "medium",
+        "category": "arrays-and-operations",
+        "description": "Write a function `merge_sorted_arrays(arr1: list[int], arr2: list[int]) -> list[int]` to merge two sorted arrays into one sorted array.",
+        "example": "# Input: arr1 = [1, 3, 5], arr2 = [2, 4, 6]\n# Output: [1, 2, 3, 4, 5, 6]",
+        "boilerplate": "def merge_sorted_arrays(arr1: list[int], arr2: list[int]) -> list[int]:",
+        "hint": "Use the two-pointer technique or sorting."
+    },
+    {
+        "title": "Move Zeros to End",
+        "difficulty": "medium",
+        "category": "arrays-and-operations",
+        "description": "Write a function `move_zeros(arr: list[int]) -> list[int]` to move all zeroes in an array to the end while maintaining the order of other elements.",
+        "example": "# Input: arr = [0, 1, 0, 3, 12]\n# Output: [1, 3, 12, 0, 0]",
+        "boilerplate": "def move_zeros(arr: list[int]) -> list[int]:",
+        "hint": "Two-pointer approach to keep track of non-zero elements."
+    },
+    {
+        "title": "Maximum Sum Subarray of Size K",
+        "difficulty": "medium",
+        "category": "arrays-and-operations",
+        "description": "Write a function `max_sum_subarray(arr: list[int], k: int) -> int` to find the maximum sum of a subarray of size `k` from the given array.",
+        "example": "# Input: arr = [2, 1, 5, 1, 3, 2], k = 3\n# Output: 9",
+        "boilerplate": "def max_sum_subarray(arr: list[int], k: int) -> int:",
+        "hint": "Use the sliding window technique to efficiently calculate the sum of subarrays of size k."
+    },
+    {
+        "title": "Sort Colors (Dutch National Flag Problem)",
+        "difficulty": "medium",
+        "category": "arrays-and-operations",
+        "description": "Write a function `sort_colors(arr: list[int]) -> list[int]` that sorts an array containing `0`s, `1`s, and `2`s without using the built-in `sort()` function.",
+        "example": "# Input: arr = [2, 0, 2, 1, 1, 0]\n# Output: [0, 0, 1, 1, 2, 2]",
+        "boilerplate": "def sort_colors(arr: list[int]) -> list[int]:",
+        "hint": "Use the Dutch National Flag algorithm with three pointers to sort the array efficiently."
+    },
+    {
+        "title": "Find Duplicate in Array",
+        "difficulty": "medium",
+        "category": "arrays-and-operations",
+        "description": "Write a function `find_duplicate(arr: list[int]) -> int` to find the first duplicate element in an array.",
+        "example": "# Input: arr = [1, 2, 3, 4, 2]\n# Output: 2",
+        "boilerplate": "def find_duplicate(arr: list[int]) -> int:",
+        "hint": "Use a set to keep track of visited elements."
+    },
+    {
+        "title": "Rotate Array (Right Shift)",
+        "difficulty": "medium",
+        "category": "arrays-and-operations",
+        "description": "Write a function `rotate_array_right(arr: list[int], k: int) -> list[int]` to rotate an array to the right by `k` positions.",
+        "example": "# Input: arr = [1, 2, 3, 4, 5], k = 2\n# Output: [4, 5, 1, 2, 3]",
+        "boilerplate": "def rotate_array_right(arr: list[int], k: int) -> list[int]:",
+        "hint": "Array slicing to rotate elements right."
+    },
+    {
+        "title": "Find Subarray with Maximum Sum",
+        "difficulty": "hard",
+        "category": "arrays-and-operations",
+        "description": "Write a function `max_subarray_sum(arr: list[int]) -> int` to find the subarray with the maximum sum.",
+        "example": "# Input: arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]\n# Output: 6",
+        "boilerplate": "def max_subarray_sum(arr: list[int]) -> int:",
+        "hint": "Kadane's algorithm for maximum subarray sum."
+    },
+    {
+        "title": "Trapping Rain Water",
+        "difficulty": "hard",
+        "category": "arrays-and-operations",
+        "description": "Write a function `trap_rain_water(arr: list[int]) -> int` to calculate the total amount of water that can be trapped after raining on an elevation map.",
+        "example": "# Input: arr = [0,1,0,2,1,0,1,3,2,1,2,1]\n# Output: 6",
+        "boilerplate": "def trap_rain_water(arr: list[int]) -> int:",
+        "hint": "Two-pointer technique to calculate trapped water."
+    },
+    {
+        "title": "Product of Array Except Self",
+        "difficulty": "hard",
+        "category": "arrays-and-operations",
+        "description": "Write a function `product_except_self(arr: list[int]) -> list[int]` to return an array where each element is the product of all elements of the array except itself.",
+        "example": "# Input: arr = [1, 2, 3, 4]\n# Output: [24, 12, 8, 6]",
+        "boilerplate": "def product_except_self(arr: list[int]) -> list[int]:",
+        "hint": "Two-pass solution: calculate left and right products."
+    },
+    {
+        "title": "Find All Subarrays with Sum Zero",
+        "difficulty": "hard",
+        "category": "arrays-and-operations",
+        "description": "Write a function `find_subarrays_zero_sum(arr: list[int]) -> list[list[int]]` to find all subarrays whose sum is zero.",
+        "example": "# Input: arr = [1, -1, 3, 2, -2, -3, 1]\n# Output: [[1, -1], [3, 2, -2, -3], [2, -2], [-2, -3, 1]]",
+        "boilerplate": "def find_subarrays_zero_sum(arr: list[int]) -> list[list[int]]:",
+        "hint": "HashMap to track cumulative sums and identify zero-sum subarrays."
+    },
+    {
+        "title": "Maximum Product Subarray",
+        "difficulty": "hard",
+        "category": "arrays-and-operations",
+        "description": "Write a function `max_product_subarray(arr: list[int]) -> int` to find the contiguous subarray with the maximum product.",
+        "example": "# Input: arr = [2, 3, -2, 4]\n# Output: 6",
+        "boilerplate": "def max_product_subarray(arr: list[int]) -> int:",
+        "hint": "Use dynamic programming with max and min product tracking."
+    },
+    
+
     // Design Pattern Questions
     {
         title: "Singleton Pattern",

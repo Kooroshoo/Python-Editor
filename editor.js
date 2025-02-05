@@ -51,7 +51,9 @@ require(['vs/editor/editor.main'], async function () {
 
         if (filteredQuestions.length > 0) {
             const question = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
-            editor.setValue(`# ${question.title}\n# ${question.description}\n# Example:\n${question.example}\n\n${question.boilerplate}`);
+            
+            // Modify the editor value to include the hint
+            editor.setValue(`# ${question.title}\n# ${question.description}\n# Example:\n${question.example}\n\n${question.boilerplate}\n\n# Hint: ${question.hint}`);
         } else {
             alert('No questions available for the selected category and difficulty.');
         }
