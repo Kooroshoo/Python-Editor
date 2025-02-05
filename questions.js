@@ -375,6 +375,87 @@ const questions = [
         "hint": "Array slicing to rotate elements right."
     },
     {
+        "title": "Bubble Sort",
+        "difficulty": "easy",
+        "category": "arrays-and-operations",
+        "description": "Write a function `bubble_sort(arr: list[int]) -> list[int]` to sort an array using the Bubble Sort algorithm.",
+        "example": "# Input: arr = [5, 2, 9, 1, 5, 6]\n# Output: [1, 2, 5, 5, 6, 9]",
+        "boilerplate": "def bubble_sort(arr: list[int]) -> list[int]:",
+        "hint": "Iterate through the array, repeatedly swapping adjacent elements if they are in the wrong order."
+    },
+    {
+        "title": "Selection Sort",
+        "difficulty": "easy",
+        "category": "arrays-and-operations",
+        "description": "Write a function `selection_sort(arr: list[int]) -> list[int]` to sort an array using the Selection Sort algorithm.",
+        "example": "# Input: arr = [64, 25, 12, 22, 11]\n# Output: [11, 12, 22, 25, 64]",
+        "boilerplate": "def selection_sort(arr: list[int]) -> list[int]:",
+        "hint": "Find the minimum element in the unsorted part of the array and swap it with the first unsorted element."
+    },
+    {
+        "title": "Quick Sort",
+        "difficulty": "medium",
+        "category": "arrays-and-operations",
+        "description": "Write a function `quick_sort(arr: list[int]) -> list[int]` to sort an array using the Quick Sort algorithm.",
+        "example": "# Input: arr = [10, 7, 8, 9, 1, 5]\n# Output: [1, 5, 7, 8, 9, 10]",
+        "boilerplate": "def quick_sort(arr: list[int]) -> list[int]:",
+        "hint": "Pick a pivot element, partition the array, and recursively sort the subarrays."
+    },
+    {
+        "title": "Merge Sort",
+        "difficulty": "medium",
+        "category": "arrays-and-operations",
+        "description": "Write a function `merge_sort(arr: list[int]) -> list[int]` to sort an array using the Merge Sort algorithm.",
+        "example": "# Input: arr = [12, 11, 13, 5, 6, 7]\n# Output: [5, 6, 7, 11, 12, 13]",
+        "boilerplate": "def merge_sort(arr: list[int]) -> list[int]:",
+        "hint": "Divide the array into two halves, recursively sort them, and merge the sorted halves."
+    },
+    {
+        "title": "Fibonacci Sequence (DP)",
+        "difficulty": "easy",
+        "category": "arrays-and-operations",
+        "description": "Write a function `fibonacci(n: int) -> int` to compute the n-th Fibonacci number using dynamic programming.",
+        "example": "# Input: n = 6\n# Output: 8",
+        "boilerplate": "def fibonacci(n: int) -> int:",
+        "hint": "Use a bottom-up approach to calculate Fibonacci numbers and store intermediate results."
+    },
+    {
+        "title": "Longest Common Subsequence",
+        "difficulty": "medium",
+        "category": "arrays-and-operations",
+        "description": "Write a function `longest_common_subsequence(s1: str, s2: str) -> int` to find the length of the longest common subsequence between two strings.",
+        "example": "# Input: s1 = 'abcde', s2 = 'ace'\n# Output: 3",
+        "boilerplate": "def longest_common_subsequence(s1: str, s2: str) -> int:",
+        "hint": "Use a 2D DP table to store the lengths of common subsequences for each pair of substrings."
+    },
+    {
+        "title": "0/1 Knapsack Problem",
+        "difficulty": "medium",
+        "category": "arrays-and-operations",
+        "description": "Write a function `knapsack(weights: list[int], values: list[int], W: int) -> int` to solve the 0/1 Knapsack Problem using dynamic programming.",
+        "example": "# Input: weights = [1, 2, 3], values = [60, 100, 120], W = 5\n# Output: 220",
+        "boilerplate": "def knapsack(weights: list[int], values: list[int], W: int) -> int:",
+        "hint": "Use dynamic programming to calculate the maximum value achievable with the given weight capacity."
+    },
+    {
+        "title": "Longest Increasing Subsequence",
+        "difficulty": "medium",
+        "category": "arrays-and-operations",
+        "description": "Write a function `longest_increasing_subsequence(arr: list[int]) -> int` to find the length of the longest increasing subsequence in an array.",
+        "example": "# Input: arr = [10, 22, 9, 33, 21, 50, 41, 60, 80]\n# Output: 6",
+        "boilerplate": "def longest_increasing_subsequence(arr: list[int]) -> int:",
+        "hint": "Use dynamic programming to calculate the length of the longest increasing subsequence."
+    },
+    {
+        "title": "Coin Change Problem",
+        "difficulty": "medium",
+        "category": "arrays-and-operations",
+        "description": "Write a function `coin_change(coins: list[int], amount: int) -> int` to find the minimum number of coins needed to make up a given amount using dynamic programming.",
+        "example": "# Input: coins = [1, 2, 5], amount = 11\n# Output: 3",
+        "boilerplate": "def coin_change(coins: list[int], amount: int) -> int:",
+        "hint": "Use dynamic programming to find the minimum number of coins for each sub-amount."
+    },    
+    {
         "title": "Find Subarray with Maximum Sum",
         "difficulty": "hard",
         "category": "arrays-and-operations",
